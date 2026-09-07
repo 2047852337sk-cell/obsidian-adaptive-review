@@ -1,0 +1,65 @@
+/* 只服务带 review-card-refined 的模板／新卡。无动效、字体请求或编辑器隐藏规则。 */
+.review-card-refined {
+  --h2-size: 1.35em;
+  --h3-size: 1.08em;
+}
+.review-card-refined .markdown-preview-section h2 {
+  margin-top: 2.2rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.review-card-refined .markdown-preview-section h3 { line-height: 1.65; margin-top: 1.5rem; }
+.review-card-refined .callout {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 9px;
+  padding: .85rem 1rem;
+  box-shadow: none;
+}
+.review-card-refined .callout-title { gap: .55rem; line-height: 1.6; }
+.review-card-refined .callout-content { line-height: 1.8; }
+.review-card-refined .callout[data-callout="abstract"] {
+  background: var(--background-secondary);
+  border-inline-start: 3px solid var(--interactive-accent);
+}
+.review-card-refined .callout[data-callout="answer"] {
+  --callout-icon: lucide-book-open-check;
+  background: var(--background-primary-alt);
+  color: var(--text-normal);
+  padding: .65rem .9rem;
+}
+.review-card-refined .callout[data-callout="answer"] .callout-title { color: var(--text-muted); font-size: .92em; }
+.review-card-refined .callout[data-callout="answer"]:hover { border-color: var(--interactive-accent); }
+.review-card-refined .block-language-dataviewjs {
+  padding: 1rem;
+  border: 1px solid var(--background-modifier-border);
+  border-top: 3px solid var(--interactive-accent);
+  border-radius: 10px;
+}
+.review-card-refined .block-language-dataviewjs p { font-size: .92em; line-height: 1.8; }
+.review-card-refined .table-view-table {
+  display: block; max-width: 100%; overflow-x: auto;
+  margin: 0 0 .8rem; font-size: .85em;
+  font-variant-numeric: tabular-nums;
+}
+.review-card-refined .table-view-table :is(th, td) { padding: .55rem .7rem; }
+.review-card-refined .table-view-table thead > tr > th {
+  white-space: nowrap; color: var(--text-muted);
+  background: var(--background-secondary); font-size: .92em;
+}
+.review-card-refined .table-view-table tbody > tr > td { white-space: nowrap; }
+.review-card-refined .block-language-dataviewjs button {
+  height: auto; min-height: 42px; min-width: 8rem;
+  padding: .55rem .8rem; border-radius: 7px;
+  background: var(--background-primary); box-shadow: none;
+  border-width: 1px; border-style: solid;
+  /* 共享脚本的分数色保留在边框，文字使用主题前景色以保证明暗主题可读。 */
+  color: var(--text-normal) !important;
+  font-weight: 600;
+}
+.review-card-refined .block-language-dataviewjs button:hover { background: var(--background-modifier-hover); }
+.review-card-refined .block-language-dataviewjs button:focus-visible { outline: 2px solid var(--text-normal); outline-offset: 3px; }
+@media (max-width: 600px) {
+  .review-card-refined .callout,
+  .review-card-refined .block-language-dataviewjs { padding: .8rem; }
+  .review-card-refined .block-language-dataviewjs button { flex: 1 1 8rem; }
+}

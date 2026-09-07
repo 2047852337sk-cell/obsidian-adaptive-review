@@ -1,0 +1,18 @@
+.planning/
+node_modules/
+dist/
+*.zip
+.env*
+*.log
+.DS_Store
+Thumbs.db
+# Only the explicitly shipped snippets and appearance settings belong in Git.
+vault/.obsidian/*
+!vault/.obsidian/snippets/
+!vault/.obsidian/appearance.json
+vault/.obsidian/snippets/*
+!vault/.obsidian/snippets/review-dashboard.css
+!vault/.obsidian/snippets/review-card-refined.css
+vault/.trash/
+vault/复习/分析报告/
+# Keep real cards in another vault; this is a public demo.

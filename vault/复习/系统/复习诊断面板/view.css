@@ -1,0 +1,58 @@
+/* 总表阅读层。不隐藏 CodeMirror 行，不添加观察器或资源请求。 */
+.review-diagnostics h3 {
+  margin-top: 2rem; padding-top: .85rem;
+  border-top: 1px solid var(--background-modifier-border); font-size: 1.12em;
+}
+.review-diagnostics h3:first-of-type { margin-top: .4rem; border-top: 0; padding-top: 0; }
+.review-diagnostics > p { line-height: 1.8; }
+.review-diagnostics table {
+  display: block; max-width: 100%; overflow-x: auto;
+  margin: .85rem 0 1.25rem; font-size: .9em;
+  font-variant-numeric: tabular-nums; border-collapse: collapse;
+}
+.review-diagnostics table :is(th, td) {
+  padding: .65rem .75rem; border-bottom: 1px solid var(--background-modifier-border);
+  vertical-align: top; min-width: 4.2em;
+}
+.review-diagnostics table thead > tr > th {
+  color: var(--text-muted); background: var(--background-secondary);
+  font-size: .9em; white-space: nowrap; font-weight: 600;
+}
+.review-diagnostics table tbody tr:nth-child(even) { background: var(--background-primary-alt); }
+.review-diagnostics table tbody tr:hover { background: var(--background-modifier-hover); }
+.review-diagnostics table td:first-child { min-width: 6em; }
+.review-diagnostics table td:not(:first-child) { white-space: nowrap; }
+.review-llm-analysis {
+  padding: 1.1rem; border: 1px solid var(--background-modifier-border);
+  border-radius: 12px; border-top: 3px solid var(--interactive-accent);
+}
+.review-llm-analysis > p { margin: .9rem 0 .45rem; font-size: .9em; color: var(--text-muted); }
+.review-llm-analysis :is(.review-analysis-period-controls, .review-analysis-type-controls, .review-analysis-category-controls, .review-analysis-actions) {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+}
+.review-llm-analysis button {
+  height: auto; min-height: 34px; padding: .4rem .75rem;
+  white-space: normal; box-shadow: none;
+  border: 1px solid var(--background-modifier-border); border-radius: 7px;
+}
+.review-llm-analysis :is(.review-analysis-type-controls, .review-analysis-category-controls) button { border-radius: 999px; }
+.review-llm-analysis button.is-active {
+  background: var(--interactive-accent); color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+.review-llm-analysis button:focus-visible,
+.review-llm-analysis summary:focus-visible { outline: 2px solid var(--text-normal); outline-offset: 3px; }
+.review-llm-analysis .review-analysis-actions { padding-top: 1rem; border-top: 1px solid var(--background-modifier-border); }
+.review-analysis-actions [role="status"] { flex-basis: 100%; color: var(--text-muted); font-size: .85em; overflow-wrap: anywhere; }
+.review-analysis-actions [role="status"]:empty { flex-basis: auto; }
+.review-llm-analysis details { margin-top: 1rem; }
+.review-llm-analysis summary { cursor: pointer; color: var(--text-muted); font-size: .9em; padding: .3rem 0; }
+.review-llm-analysis textarea {
+  margin-top: .65rem; padding: .8rem; line-height: 1.7;
+  font-size: .85em; resize: vertical; border-radius: 7px;
+}
+@media (max-width: 600px) {
+  .review-llm-analysis { padding: .8rem; }
+  .review-llm-analysis button { min-height: 40px; }
+  .review-diagnostics table :is(th, td) { padding: .55rem; }
+}

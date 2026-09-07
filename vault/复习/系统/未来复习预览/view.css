@@ -1,0 +1,33 @@
+/* 仅作用于此共享视图；主题原生颜色，无外部资源或动效。 */
+.review-future {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  border-inline-start: 3px solid var(--interactive-accent);
+}
+.review-future .future-review-controls,
+.review-future .future-review-category-controls {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: .45rem; margin: 0 0 .85rem;
+}
+.review-future button {
+  height: auto; min-height: 34px; padding: .4rem .75rem;
+  white-space: normal; box-shadow: none;
+  border: 1px solid var(--background-modifier-border); border-radius: 7px;
+}
+.review-future .future-review-controls button { min-width: 7rem; }
+.review-future .future-review-category-controls button { border-radius: 999px; }
+.review-future button.is-active {
+  background: var(--interactive-accent); color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+.review-future button:focus-visible { outline: 2px solid var(--text-normal); outline-offset: 3px; }
+.review-future .future-review-control-label,
+.review-future .future-review-load { color: var(--text-muted); font-size: var(--font-ui-small); }
+.review-future .future-review-summary { margin: 1rem 0 .35rem; }
+.review-future .future-review-load { margin: 0 0 .7rem; line-height: 1.8; }
+.review-future .table-view-table { display: block; max-width: 100%; overflow-x: auto; margin-bottom: 0; }
+@media (max-width: 600px) {
+  .review-future { padding: .8rem; }
+  .review-future button { min-height: 40px; }
+}

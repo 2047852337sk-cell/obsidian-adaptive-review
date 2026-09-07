@@ -1,0 +1,28 @@
+/* 总表专用：独立于实时预览的虚拟滚动，避免滚动时表格样式跳变。 */
+.review-dashboard .markdown-preview-section > div > h1 {
+  letter-spacing: -.025em;
+  padding-bottom: .65rem;
+  border-bottom: 2px solid var(--interactive-accent);
+}
+.review-dashboard .markdown-preview-section > div > h2 { margin-top: 2.2rem; font-size: 1.35em; }
+.review-dashboard blockquote { color: var(--text-muted); font-size: .94em; line-height: 1.8; }
+.review-dashboard .table-view-table {
+  display: block; max-width: 100%; overflow-x: auto;
+  margin: .85rem 0 1.25rem; font-size: .9em;
+  font-variant-numeric: tabular-nums; border-collapse: collapse;
+}
+.review-dashboard .table-view-table :is(th, td) {
+  padding: .65rem .75rem; border-bottom: 1px solid var(--background-modifier-border);
+  vertical-align: top; min-width: 4.2em;
+}
+.review-dashboard .table-view-table thead > tr > th {
+  color: var(--text-muted); background: var(--background-secondary);
+  font-size: .9em; white-space: nowrap; font-weight: 600;
+}
+.review-dashboard .table-view-table tbody tr:nth-child(even) { background: var(--background-primary-alt); }
+.review-dashboard .table-view-table tbody tr:hover { background: var(--background-modifier-hover); }
+.review-dashboard .table-view-table td:first-child { min-width: 10em; }
+.review-dashboard .table-view-table td:not(:first-child) { white-space: nowrap; }
+@media (max-width: 600px) {
+  .review-dashboard .table-view-table :is(th, td) { padding: .55rem; }
+}
